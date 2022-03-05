@@ -1,0 +1,34 @@
+<h2>Child component with @Output()</h2>
+
+<!-- <input type="text" id="item-input" #newItem>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent's list</button> -->
+<div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="start center">
+    <div class="front-look" style="width: 500px; height: 350px;">
+        <div class="box box2">
+            <div class="box-inner">
+                <h3>hello</h3>
+                <img src="../../assets/testcard.png" style="width: 80px;margin-left: 45px;">
+                <p class="card-num-name">0000{{space}}0000{{space}}0000{{space}}0000</p>
+                <p style="position: relative;text-align: center;margin-left: -45px;">
+                    <span class="card-num-name">valid <br>Threw</span><span class="card-num-name"
+                        style="margin-top: -2%;position: absolute;">55/55</span>
+                </p>
+                <h3>{{name}}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="front-look" style="width: 500px;">
+        <div class="transparent-line" style="width: 100% ;height: 80px; margin: 21px 0;"></div>
+
+        <div fxLayout="row" fxLayoutGap="10px" style="padding: 0 10%;">
+            <div>
+                <div style="background-color:#fff; height: 40px;width: 200px;"></div>
+                <p>fxFlex is one of and powerful API</p>
+            </div>
+            <div>
+                <p>555</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+.front-look{
+    background-color: rgb(24, 22, 22);
+    border-radius: 18px;
+    padding: 14px 20px;
+    position: relative;
+
+}
+p{
+    color: #fff;
+}
+h3{
+    color: #fff;
+}
+.transparent-line{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 25%, rgba(2,2,20,1) 35%, rgba(87,92,93,1) 87%, rgba(72,74,74,1) 96%, rgba(88,90,91,1) 100%);
+
+}
+.card-num-name{
+    text-align: center;
+    font-size: 25px;
+    color: #9fa3a3;
+    font-weight: 500;
+}
+.box {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    background-color: rgba(#000, 0.5);
+    width: 100%;
+    max-width: 600px;
+    padding: 5px;
+    border: 4px solid #9fa3a3;
+}
+.box:before {
+    content: "•";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: #9fa3a3;
+    border: 2px solid #9fa3a3;
+    line-height: 12px;
+    top: 5px;
+    text-align: center;
+  
+  
+}
+.box:after {
+    content: "•";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    font-size: 14px;
+    color: #9fa3a3;
+    border: 2px solid #9fa3a3;
+    line-height: 12px;
+    top: 5px;
+    text-align: center;
+  
+  
+}
+.box:before {
+    left: 5px;
+  }
+  .box:after {
+    right: 5px;
+  }
+
+.box-inner {
+    position: relative;
+    border: 4px solid #9fa3a3;
+    padding: 7px 16px;
+}
+.box-inner:before {
+      content: "•";
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      font-size: 14px;
+      color: #9fa3a3;
+      border: 2px solid #9fa3a3;
+      line-height: 12px;
+      bottom: -2px;
+      text-align: center;
+    }
+
+    .box-inner:after {
+        content: "•";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+        color: #9fa3a3;
+        border: 2px solid #9fa3a3;
+        line-height: 12px;
+        bottom: -2px;
+        text-align: center;
+      }
+    .box-inner:before {
+      left: -2px;
+    }
+    .box-inner:after {
+      right: -2px;
+    }
+  

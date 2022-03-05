@@ -1,0 +1,197 @@
+<div fxLayout="row">
+    <div fxFlex="5">
+    </div>
+
+    <!-- Credit CARD DEsign Start -->
+
+    <div fxFlex="45" style="border-right: 2px solid #D3D3D3;padding: 20px 0;">
+
+        <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="start center">
+            <div class="front-look" [ngStyle]="{'background-color': color}" style="width: 500px; height: 346px;">
+                <div  [ngClass]="{'box': bordertwo == true, 'box2': borderone == true}" [ngStyle]="{'background-color': color}">
+                    <div [ngClass]="bordertwo == true ? 'box-inner':'box3'">
+                        <span style="border: 2px dashed rgb(209, 209, 209);color: #fff;font-size: 14px;padding: 5px;">{{logocmnt}}</span><br>
+                        <img src="../../assets/testcard.png" style="width: 80px;margin-top: 45px;">
+
+                        <p [ngClass]="ActiveCardName ==1 ? 'activeslide':'activeslide2'" class="card-num-name">
+                            {{Cardnum}}</p>
+                        <p [ngClass]="ActiveCardName ==1 ? 'activeslide':'activeslide2'"
+                            style="position: relative;text-align: center;margin-left: -45px;">
+                            <span class="card-num-name">valid <br>Threw</span><span class="card-num-name"
+                                style="margin-top: -2%;position: absolute;">55/55</span>
+                        </p>
+                        <h3 [ngClass]="ActiveCardNumber ==1 ? 'activeslide':'activeslide2'">{{NAme}}</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="front-look" style="width: 500px;">
+                <div class="transparent-line" style="width: 100% ;height: 80px; margin: 21px 0;"></div>
+
+                <div fxLayout="row" fxLayoutGap="10px" style="padding: 0 10%;">
+                    <div>
+                        <div style="background-color:#fff; height: 40px;width: 200px;"></div>
+                        <p>{{Comment}}</p>
+                    </div>
+                    <div>
+                        <p>555</p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+
+        <!-- <app-item-output (newItemEvent)="addItem($event)"></app-item-output> -->
+    </div>
+
+    <!-- Credit CARD DEsign End -->
+
+    <!-- FORM DESIGN -->
+
+    <div fxFlex="45">
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab label="First">
+                <div style="padding: 42px 27px;">
+                    <form fxLayout="column">
+                        <div fxLayout="column" fxFlex="100" style="margin-bottom: 20px;">
+
+                            <div>
+                                <label>Card Holder Name</label>
+
+                                <input type=text #box (keyup)="getvalue(box.value)" class="form-control"
+                                    placeholder="Name here" name="tyyy" [(ngModel)]="name"
+                                    (ngModelChange)="log($event)">
+
+                            </div>
+                        </div>
+
+
+                        <div fxLayout="row" fxLayoutGap="20px" fxFlex="100">
+                            <div fxLayout="column" fxFlex="50">
+
+                                <label>Card Name On</label>
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Front" [(ngModel)]="selectedValue"
+                                        (selectionChange)="firstDropDownChanged($event.value)">
+                                        <mat-option *ngFor="let v of Items" [value]="v.value">
+                                            {{ v.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="column" fxFlex="50">
+
+                                <label>Card Number On</label>
+                                <mat-form-field appearance="outline">
+                                    <mat-select placeholder="Front" [(ngModel)]="selectedValue"
+                                        (selectionChange)="secondDropDownChanged($event.value)">
+                                        <mat-option *ngFor="let num of Namesshow" [value]="num.value">
+                                            {{ num.label }}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+
+
+                            </div>
+                        </div>
+                        <div fxLayout="column" fxFlex="100" style="margin-bottom: 20px;">
+
+                            <div>
+                                <label>Comment</label>
+
+                                <textarea  #cmntbox (keyup)="getcmnt(cmntbox.value)" class="form-control"
+                                    placeholder="Add Comment" name="cmnt" [(ngModel)]="namecmnt"
+                                    (ngModelChange)="log($event)">
+                                </textarea>
+                            </div>
+                        </div>
+
+                        <hr style="width: 100%;background-color: #f8f8f8;">
+                        <button class="subbtn">Create Card</button>
+                    </form>
+                </div>
+            </mat-tab>
+            <mat-tab label="Second">
+                <div style="padding: 10px 20px;">
+                    <div fxLayout="row" fxLayoutGap="20px">
+                        <div fxLayout="column" >
+                            <h2> Colors</h2>
+
+                        <div fxLayout="row" fxFlex="50" fxLayoutGap="20px" style="margin: 6px 6px;">
+
+                        <div class="card-color-pos"><div class="card-color-picker card-color" (click)="bgchange('#5B4908')"></div><p class="clr-price">$30</p></div>
+                        <div class="card-color-pos"><div class="card-color-picker card-color2" (click)="bgchange('green')"></div><p class="clr-price2">$30</p></div>
+                        <div class="card-color-pos"><div class="card-color-picker card-color3" (click)="bgchange('grey')"></div><p class="clr-price3">$30</p></div>
+                        <div class="card-color-pos"><div class="card-color-picker card-color4" (click)="bgchange('skyblue')"></div><p class="clr-price4">$30</p></div>
+                        <div class="card-color-pos"><div class="card-color-picker card-color5" (click)="bgchange('#0C0B0B')"></div><p class="clr-price5">$30</p></div>
+
+                    </div>
+                   
+
+                    </div>
+                    <div fxFlex="50">
+                        <h2>Borders</h2>
+
+
+                    <button class="boxborder " (click)="border2()"
+                        style=" text-align: left; left: 8%;border-radius: 4px;">
+                        <div class="boxborder-inner"></div>
+                    </button>
+                    <button class="boxborder2 " (click)="bordersimple()"
+                    style=" text-align: left; left: 14%;border-radius: 4px;">
+                    <div class="boxborder2-inner"></div>
+                </button>
+                </div>
+                </div>
+              
+
+                <div fxLayout="column"  fxLayoutGap="4%" style="margin-top: 10%;">
+                    <div fxLayout="row" fxLayoutGap="10%" class="tablestyle">
+                        <div>Mirror Card</div>
+                        <div>$50</div>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutGap="10%" class="tablestyle">
+                        <div>Card</div>
+                        <div style="position: relative;
+                        right: -9%;">$30</div>
+                  
+                    </div>
+                 
+                    <div fxLayout="row" fxLayoutGap="10%" class="tablestyle" >
+                        <div>Total</div>
+                        <div style="position: relative;
+                        right: -9%;">$80</div>
+                    </div>
+
+                </div>
+
+
+                </div>
+            </mat-tab>
+
+
+            <mat-tab label="Third">
+                <form fxLayout="column">
+                    <div fxLayout="column" fxFlex="100" style="margin-bottom: 20px;">
+
+                        <div>
+                            <label>Custom logo</label>
+
+                            <textarea  #logo (keyup)="getlogo(logo.value)" class="form-control"
+                            placeholder="Add logo" name="logo" [(ngModel)]="namelogo"
+                            (ngModelChange)="log($event)">
+                        </textarea>
+                        </div>
+                    </div>
+                </form>
+            </mat-tab>
+        </mat-tab-group>
+
+    </div>
+    <!-- FORM DESIGN End-->
+
+    <div fxFlex="5">
+    </div>
+</div>
